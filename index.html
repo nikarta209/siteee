@@ -1,0 +1,1637 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[НАЗВАНИЕ] — Финансирование под залог недвижимости</title>
+<meta name="description" content="Частное финансирование под залог недвижимости до 70% от стоимости. По 102-ФЗ. Вы остаётесь собственником.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+
+/* ═══════════════════════════════════════════════════════
+   DESIGN SYSTEM — Lima One / Kiavi / BlackRock 2025–2026
+═══════════════════════════════════════════════════════ */
+:root{
+  --navy:     #0F172A;
+  --graphite: #1C2541;
+  --bg:       #F8FAFC;
+  --white:    #FFFFFF;
+  --gold:     #C6A96B;
+  --gold2:    #D4BA82;
+  --gold-lt:  rgba(198,169,107,.12);
+  --text:     #0F172A;
+  --text2:    #334155;
+  --muted:    #64748B;
+  --border:   #E2E8F0;
+  --border2:  rgba(198,169,107,.25);
+  --navy-t:   rgba(15,23,42,.65);
+
+  --r:6px;--r2:12px;--r3:20px;--r4:32px;
+
+  /* spacing */
+  --s1:8px;--s2:16px;--s3:24px;--s4:40px;--s5:80px;--s6:120px;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Manrope',sans-serif;
+  background:var(--bg);color:var(--text);
+  overflow-x:hidden;line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%}
+a{text-decoration:none;color:inherit}
+button{cursor:pointer;font-family:inherit}
+
+/* ─── LAYOUT ─── */
+.W{max-width:1280px;margin:0 auto;padding:0 60px}
+.W--narrow{max-width:920px;margin:0 auto;padding:0 60px}
+section{padding:var(--s6) 0}
+
+/* ─── SCROLL ANIMATIONS ─── */
+.fa{opacity:0;transform:translateY(36px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
+.fa.in{opacity:1;transform:none}
+.fa-l{opacity:0;transform:translateX(-28px);transition:opacity .85s cubic-bezier(.16,1,.3,1),transform .85s cubic-bezier(.16,1,.3,1)}
+.fa-l.in{opacity:1;transform:none}
+.fa-r{opacity:0;transform:translateX(28px);transition:opacity .85s cubic-bezier(.16,1,.3,1),transform .85s cubic-bezier(.16,1,.3,1)}
+.fa-r.in{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.17s}
+.d3{transition-delay:.26s}.d4{transition-delay:.35s}
+.d5{transition-delay:.44s}.d6{transition-delay:.53s}
+
+/* ─── TYPOGRAPHY ─── */
+.eyebrow{
+  display:inline-block;
+  font-size:11px;font-weight:700;letter-spacing:3px;
+  text-transform:uppercase;color:var(--gold);
+  margin-bottom:18px;
+}
+.display{
+  font-size:clamp(36px,4.5vw,68px);
+  font-weight:800;line-height:1.08;
+  letter-spacing:-.03em;color:var(--navy);
+}
+.display em{color:var(--gold);font-style:normal}
+.h2{
+  font-size:clamp(28px,3.2vw,46px);
+  font-weight:800;line-height:1.1;
+  letter-spacing:-.025em;color:var(--navy);
+}
+.h2 em{color:var(--gold);font-style:normal}
+.h3{font-size:clamp(18px,2vw,24px);font-weight:700;color:var(--navy);letter-spacing:-.015em}
+.body-lg{font-size:17px;line-height:1.75;color:var(--text2)}
+.body{font-size:15px;line-height:1.7;color:var(--text2)}
+.caption{font-size:13px;color:var(--muted);font-weight:500}
+
+/* ─── BUTTONS ─── */
+.btn-navy{
+  display:inline-flex;align-items:center;gap:9px;
+  background:var(--navy);color:#fff;
+  border:none;border-radius:var(--r2);
+  font-size:15px;font-weight:700;
+  padding:15px 30px;transition:all .25s;white-space:nowrap;
+}
+.btn-navy:hover{background:var(--graphite);transform:translateY(-2px);box-shadow:0 12px 32px rgba(15,23,42,.28)}
+.btn-gold{
+  display:inline-flex;align-items:center;gap:9px;
+  background:var(--gold);color:#fff;
+  border:none;border-radius:var(--r2);
+  font-size:15px;font-weight:700;
+  padding:15px 30px;transition:all .25s;white-space:nowrap;
+}
+.btn-gold:hover{background:var(--gold2);transform:translateY(-2px);box-shadow:0 12px 32px rgba(198,169,107,.4)}
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:9px;
+  background:transparent;color:var(--navy);
+  border:1.5px solid var(--navy);border-radius:var(--r2);
+  font-size:14px;font-weight:600;
+  padding:13px 26px;transition:all .22s;
+}
+.btn-ghost:hover{background:var(--navy);color:#fff}
+
+/* ─── DIVIDER ─── */
+.rule{height:1px;background:var(--border);margin:0}
+.rule-gold{height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:0}
+
+/* ═══════════════════════════════════════════════════════
+   HEADER
+═══════════════════════════════════════════════════════ */
+header{
+  position:fixed;inset:0 0 auto;z-index:600;
+  height:68px;display:flex;align-items:center;
+  padding:0 60px;
+  background:rgba(255,255,255,.96);
+  backdrop-filter:blur(20px) saturate(1.4);
+  border-bottom:1px solid rgba(226,232,240,.8);
+  transition:box-shadow .3s,background .3s;
+}
+header.scrolled{box-shadow:0 4px 32px rgba(15,23,42,.06)}
+
+/* ⬇ ЛОГОТИП */
+.logo{display:flex;align-items:center;gap:10px;font-size:18px;font-weight:800;color:var(--navy);letter-spacing:-.03em}
+.logo-mark{
+  width:36px;height:36px;background:var(--navy);border-radius:8px;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--gold);font-size:14px;font-weight:900;letter-spacing:0;
+}
+/* ⬆ */
+
+.hdr-nav{display:flex;align-items:center;gap:36px;margin:0 auto}
+.hdr-nav a{font-size:14px;font-weight:600;color:var(--text2);transition:color .2s;letter-spacing:-.01em}
+.hdr-nav a:hover{color:var(--navy)}
+.hdr-right{display:flex;align-items:center;gap:12px}
+/* счётчик заявок */
+.hdr-counter{
+  font-size:13px;font-weight:600;color:var(--muted);
+  display:flex;align-items:center;gap:6px;
+}
+.hdr-counter::before{
+  content:'';width:8px;height:8px;border-radius:50%;
+  background:#22C55E;animation:pulse-green 2s infinite;
+}
+@keyframes pulse-green{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
+
+.burger{display:none;background:none;border:none;flex-direction:column;gap:5px;padding:4px}
+.burger span{display:block;width:22px;height:1.5px;background:var(--text);border-radius:2px;transition:all .3s}
+.burger.on span:nth-child(1){transform:rotate(45deg) translate(4.5px,4.5px)}
+.burger.on span:nth-child(2){opacity:0}
+.burger.on span:nth-child(3){transform:rotate(-45deg) translate(4.5px,-4.5px)}
+.mob-nav{
+  display:none;position:fixed;top:68px;inset-x:0;z-index:599;
+  background:#fff;border-bottom:1px solid var(--border);
+  flex-direction:column;padding:24px 60px 32px;gap:0;
+}
+.mob-nav.on{display:flex}
+.mob-nav a{color:var(--text2);font-size:16px;font-weight:600;padding:13px 0;border-bottom:1px solid var(--border)}
+.mob-nav .btn-gold{margin-top:18px;width:100%;justify-content:center}
+
+/* ═══════════════════════════════════════════════════════
+   HERO — полноэкранное фото + калькулятор
+═══════════════════════════════════════════════════════ */
+.hero{
+  position:relative;min-height:100vh;
+  display:flex;align-items:center;
+  padding:0;overflow:hidden;
+}
+
+/* фоновое фото */
+.hero-bg{
+  position:absolute;inset:0;z-index:0;
+  background:
+    linear-gradient(
+      105deg,
+      rgba(15,23,42,.88) 0%,
+      rgba(15,23,42,.72) 44%,
+      rgba(15,23,42,.3) 100%
+    ),
+    url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1800&q=90&auto=format')
+    center/cover no-repeat;
+}
+
+/* золотая полоска у левого края */
+.hero-bg::after{
+  content:'';position:absolute;
+  left:0;top:0;bottom:0;width:4px;
+  background:linear-gradient(to bottom,transparent,var(--gold),transparent);
+  z-index:1;
+}
+
+.hero-inner{
+  position:relative;z-index:2;
+  width:100%;max-width:1280px;margin:0 auto;
+  padding:120px 60px 80px;
+  display:grid;grid-template-columns:1fr 440px;
+  gap:60px;align-items:center;
+}
+
+/* ── левая часть hero ── */
+.hero-left{}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  border:1px solid rgba(198,169,107,.4);
+  border-radius:30px;padding:6px 16px;
+  font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+  color:var(--gold);margin-bottom:28px;
+  background:rgba(198,169,107,.08);
+}
+.hero-badge::before{content:'●';font-size:7px;animation:blink 2.5s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+
+.hero-h1{
+  font-size:clamp(34px,4.8vw,72px);
+  font-weight:900;line-height:1.04;
+  letter-spacing:-.035em;
+  color:#fff;
+  margin-bottom:22px;
+}
+.hero-h1 span{
+  color:var(--gold);
+  display:block;
+}
+.hero-sub{
+  font-size:clamp(16px,1.5vw,20px);
+  color:rgba(255,255,255,.68);
+  line-height:1.7;max-width:540px;
+  margin-bottom:38px;
+}
+.hero-sub b{color:rgba(255,255,255,.9);font-weight:600}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:48px}
+
+/* доверие-бейджи под кнопками */
+.hero-trust{display:flex;align-items:center;gap:28px;flex-wrap:wrap}
+.htrust-item{display:flex;align-items:center;gap:8px}
+.htrust-icon{
+  width:32px;height:32px;border-radius:8px;
+  background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);
+  display:flex;align-items:center;justify-content:center;font-size:14px;
+}
+.htrust-text{font-size:12px;color:rgba(255,255,255,.65);font-weight:600;letter-spacing:.3px}
+
+/* ── КАЛЬКУЛЯТОР ── */
+.hero-calc{
+  background:rgba(255,255,255,.97);
+  border-radius:var(--r4);
+  padding:36px 32px;
+  box-shadow:0 32px 80px rgba(15,23,42,.3),0 0 0 1px rgba(255,255,255,.15);
+}
+.calc-title{
+  font-size:18px;font-weight:800;color:var(--navy);
+  letter-spacing:-.02em;margin-bottom:6px;
+}
+.calc-sub{font-size:13px;color:var(--muted);margin-bottom:24px}
+.calc-label{
+  display:block;font-size:12px;font-weight:700;
+  letter-spacing:1.2px;text-transform:uppercase;
+  color:var(--muted);margin-bottom:8px;
+}
+.calc-input-wrap{
+  position:relative;margin-bottom:18px;
+}
+.calc-input{
+  width:100%;border:1.5px solid var(--border);border-radius:var(--r);
+  padding:13px 16px;font-family:inherit;font-size:15px;font-weight:600;
+  color:var(--navy);background:#fff;transition:border-color .2s,box-shadow .2s;
+}
+.calc-input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(198,169,107,.12)}
+.calc-input-suffix{
+  position:absolute;right:14px;top:50%;transform:translateY(-50%);
+  font-size:15px;font-weight:700;color:var(--muted);
+}
+.calc-range{
+  width:100%;accent-color:var(--gold);
+  height:4px;border-radius:2px;margin-bottom:6px;
+  cursor:pointer;
+}
+.calc-range-labels{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-bottom:18px}
+.calc-result{
+  background:var(--navy);border-radius:var(--r2);
+  padding:20px;margin-bottom:18px;
+}
+.calc-result-row{display:flex;justify-content:space-between;align-items:center;padding:6px 0}
+.calc-result-row:not(:last-child){border-bottom:1px solid rgba(255,255,255,.08)}
+.calc-result-label{font-size:12px;color:rgba(255,255,255,.55);font-weight:500}
+.calc-result-val{font-size:15px;font-weight:800;color:#fff}
+.calc-result-val.accent{color:var(--gold);font-size:22px}
+/* чекбокс согласия */
+.calc-check{display:flex;align-items:flex-start;gap:9px;margin-bottom:16px;font-size:12px;color:var(--muted);line-height:1.5}
+.calc-check input[type=checkbox]{width:15px;height:15px;margin-top:1px;accent-color:var(--gold);flex-shrink:0;cursor:pointer}
+.calc-check a{color:var(--gold)}
+.calc-ok{display:none;text-align:center;padding:20px 0}
+.calc-ok .ck{font-size:36px;color:var(--gold);margin-bottom:8px}
+.calc-ok p{font-size:14px;font-weight:600;color:var(--navy)}
+.calc-ok small{display:block;color:var(--muted);font-size:12px;margin-top:3px}
+
+/* ═══════════════════════════════════════════════════════
+   TRUST BAR — цифры после hero
+═══════════════════════════════════════════════════════ */
+.trust-bar{background:var(--navy);padding:0}
+.trust-row{display:grid;grid-template-columns:repeat(4,1fr)}
+.trust-cell{
+  padding:40px 48px;
+  border-right:1px solid rgba(255,255,255,.07);
+  display:flex;flex-direction:column;gap:6px;
+  transition:background .2s;
+}
+.trust-cell:last-child{border-right:none}
+.trust-cell:hover{background:rgba(255,255,255,.03)}
+.tc-n{
+  font-size:44px;font-weight:900;
+  color:var(--white);line-height:1;
+  letter-spacing:-.04em;
+}
+.tc-n .gold{color:var(--gold)}
+.tc-l{font-size:13px;color:rgba(255,255,255,.45);font-weight:500;line-height:1.4}
+.tc-sub{font-size:12px;color:rgba(198,169,107,.6);font-weight:600;margin-top:2px}
+
+/* ═══════════════════════════════════════════════════════
+   ОБЪЕКТЫ (профинансированные)
+═══════════════════════════════════════════════════════ */
+.objects{background:var(--white);padding:var(--s6) 0}
+.sec-head{margin-bottom:56px}
+.objects-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:2px;
+  border-radius:var(--r3);overflow:hidden;
+}
+.obj-card{
+  position:relative;
+  aspect-ratio:4/5;overflow:hidden;
+}
+.obj-card img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform .7s cubic-bezier(.16,1,.3,1);
+  display:block;
+}
+.obj-card:hover img{transform:scale(1.06)}
+.obj-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(15,23,42,.82) 0%,rgba(15,23,42,.1) 55%,transparent 100%);
+  display:flex;flex-direction:column;justify-content:flex-end;
+  padding:28px 24px;
+}
+.obj-tag{
+  display:inline-block;
+  background:var(--gold);color:#fff;
+  font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;
+  padding:4px 10px;border-radius:4px;margin-bottom:10px;width:fit-content;
+}
+.obj-city{font-size:16px;font-weight:700;color:#fff;margin-bottom:4px;letter-spacing:-.01em}
+.obj-sum{font-size:26px;font-weight:900;color:var(--gold);letter-spacing:-.03em;line-height:1}
+.obj-detail{font-size:12px;color:rgba(255,255,255,.55);margin-top:4px}
+
+/* ═══════════════════════════════════════════════════════
+   КАК ПРОХОДИТ СДЕЛКА — 5 шагов
+═══════════════════════════════════════════════════════ */
+.deal{background:var(--bg);padding:var(--s6) 0}
+.deal-steps{
+  display:grid;grid-template-columns:repeat(5,1fr);
+  gap:0;margin-top:64px;position:relative;
+}
+/* горизонтальная линия */
+.deal-steps::before{
+  content:'';position:absolute;
+  top:28px;left:calc(10% + 8px);right:calc(10% + 8px);
+  height:1px;background:var(--border2);z-index:0;
+}
+.ds{text-align:center;padding:0 16px;position:relative;z-index:1}
+.ds-num{
+  width:56px;height:56px;border-radius:50%;
+  background:var(--white);border:2px solid var(--border2);
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 24px;
+  font-size:18px;font-weight:900;color:var(--navy);
+  transition:all .3s;position:relative;z-index:1;
+}
+.ds-num::after{
+  content:'';position:absolute;inset:-6px;border-radius:50%;
+  border:1px solid transparent;transition:border-color .3s;
+}
+.ds:hover .ds-num{
+  background:var(--navy);color:var(--gold);border-color:var(--navy);
+  transform:scale(1.1);box-shadow:0 8px 28px rgba(15,23,42,.2);
+}
+.ds:hover .ds-num::after{border-color:rgba(198,169,107,.3)}
+.ds-title{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:8px;letter-spacing:-.01em}
+.ds-desc{font-size:12.5px;color:var(--muted);line-height:1.6}
+
+/* ═══════════════════════════════════════════════════════
+   УСЛОВИЯ ЗАЙМА — таблица
+═══════════════════════════════════════════════════════ */
+.conditions{background:var(--white);padding:var(--s6) 0}
+.cond-table{
+  width:100%;border-collapse:collapse;
+  margin-top:56px;
+  border-radius:var(--r3);overflow:hidden;
+  box-shadow:0 4px 32px rgba(15,23,42,.07);
+}
+.cond-table th{
+  background:var(--navy);color:#fff;
+  font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+  padding:18px 28px;text-align:left;
+}
+.cond-table th:last-child{color:var(--gold)}
+.cond-table tr:nth-child(even){background:var(--bg)}
+.cond-table tr:nth-child(odd){background:var(--white)}
+.cond-table tr:hover{background:var(--gold-lt)}
+.cond-table td{
+  padding:18px 28px;font-size:14px;color:var(--text2);
+  border-bottom:1px solid var(--border);
+  font-weight:500;
+}
+.cond-table td:first-child{color:var(--muted);font-weight:400}
+.cond-table td:last-child{color:var(--navy);font-weight:700}
+.cond-badge{
+  display:inline-block;
+  background:linear-gradient(135deg,#22C55E,#16A34A);
+  color:#fff;font-size:10px;font-weight:800;
+  padding:3px 8px;border-radius:4px;
+  letter-spacing:.5px;margin-left:6px;
+}
+
+/* ═══════════════════════════════════════════════════════
+   МЫ vs БАНК
+═══════════════════════════════════════════════════════ */
+.versus{background:var(--navy);padding:var(--s6) 0}
+.versus .eyebrow{color:rgba(198,169,107,.7)}
+.versus .h2{color:#fff}
+.vs-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:56px;border-radius:var(--r3);overflow:hidden}
+.vs-col{background:rgba(255,255,255,.04);padding:40px}
+.vs-col--us{background:rgba(198,169,107,.08);border:1px solid rgba(198,169,107,.2)}
+.vs-col-head{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:32px;
+}
+.vs-name{font-size:16px;font-weight:800;color:#fff;letter-spacing:-.01em}
+.vs-badge{
+  font-size:11px;font-weight:700;letter-spacing:1.5px;
+  text-transform:uppercase;padding:5px 12px;border-radius:20px;
+}
+.vs-badge--us{background:var(--gold);color:#fff}
+.vs-badge--bank{background:rgba(255,255,255,.1);color:rgba(255,255,255,.5)}
+.vs-rows{display:flex;flex-direction:column;gap:0}
+.vs-row{
+  display:flex;align-items:flex-start;gap:12px;
+  padding:14px 0;border-bottom:1px solid rgba(255,255,255,.06);
+}
+.vs-row:last-child{border-bottom:none}
+.vs-check{
+  width:22px;height:22px;border-radius:50%;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  font-size:11px;font-weight:900;margin-top:1px;
+}
+.vs-check--yes{background:rgba(34,197,94,.2);color:#22C55E}
+.vs-check--no{background:rgba(239,68,68,.15);color:#EF4444}
+.vs-check--mid{background:rgba(234,179,8,.15);color:#EAB308;font-size:9px}
+.vs-text{font-size:14px;color:rgba(255,255,255,.7);line-height:1.5}
+.vs-text b{color:#fff;font-weight:600}
+
+/* ═══════════════════════════════════════════════════════
+   КЕЙСЫ + ОТЗЫВЫ
+═══════════════════════════════════════════════════════ */
+.cases{background:var(--bg);padding:var(--s6) 0}
+.cases-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:28px;margin-top:56px;
+}
+.case-card{
+  background:var(--white);border:1px solid var(--border);
+  border-radius:var(--r3);overflow:hidden;
+  transition:all .3s cubic-bezier(.16,1,.3,1);
+}
+.case-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 24px 60px rgba(15,23,42,.1);
+  border-color:var(--border2);
+}
+.case-photo{height:220px;overflow:hidden;position:relative}
+.case-photo img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.case-card:hover .case-photo img{transform:scale(1.05)}
+.case-photo-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(15,23,42,.6),transparent 60%);
+}
+.case-body{padding:28px 28px 24px}
+.case-meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.case-city{font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold)}
+.case-tag{
+  background:var(--navy);color:#fff;
+  font-size:11px;font-weight:700;
+  padding:4px 10px;border-radius:4px;letter-spacing:.5px;
+}
+.case-title{font-size:17px;font-weight:700;color:var(--navy);letter-spacing:-.01em;margin-bottom:10px}
+.case-desc{font-size:14px;color:var(--muted);line-height:1.65;margin-bottom:20px}
+.case-numbers{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:14px;
+  background:var(--bg);border-radius:var(--r);padding:16px;
+}
+.cn-item{text-align:center}
+.cn-val{font-size:20px;font-weight:800;color:var(--navy);letter-spacing:-.02em}
+.cn-val em{color:var(--gold);font-style:normal}
+.cn-label{font-size:11px;color:var(--muted);margin-top:2px;font-weight:500}
+
+/* ── ОТЗЫВЫ карусель ── */
+.reviews-track-wrap{overflow:hidden;position:relative;margin-top:64px}
+.reviews-track-wrap::before,.reviews-track-wrap::after{
+  content:'';position:absolute;top:0;bottom:0;width:100px;z-index:2;pointer-events:none;
+}
+.reviews-track-wrap::before{left:0;background:linear-gradient(to right,var(--bg),transparent)}
+.reviews-track-wrap::after{right:0;background:linear-gradient(to left,var(--bg),transparent)}
+.reviews-track{display:flex;gap:20px;width:max-content;animation:revscroll 55s linear infinite}
+.reviews-track:hover{animation-play-state:paused}
+@keyframes revscroll{to{transform:translateX(-50%)}}
+.rev{
+  width:320px;flex-shrink:0;background:var(--white);
+  border:1px solid var(--border);border-radius:var(--r3);
+  padding:28px 26px;transition:all .3s;
+}
+.rev:hover{border-color:var(--border2);box-shadow:0 12px 40px rgba(15,23,42,.08)}
+.rev-stars{color:var(--gold);font-size:14px;letter-spacing:2px;margin-bottom:14px}
+.rev-text{font-size:14px;color:var(--text2);line-height:1.7;margin-bottom:18px;font-style:italic}
+.rev-author{font-size:13px;font-weight:700;color:var(--navy);letter-spacing:-.01em}
+.rev-role{font-size:12px;color:var(--muted)}
+
+/* ═══════════════════════════════════════════════════════
+   ЮРИДИЧЕСКАЯ БЕЗОПАСНОСТЬ
+═══════════════════════════════════════════════════════ */
+.legal{background:var(--white);padding:var(--s6) 0}
+.legal-layout{display:grid;grid-template-columns:5fr 7fr;gap:100px;align-items:center}
+.legal-doc{
+  background:var(--bg);border:1px solid var(--border);
+  border-radius:var(--r3);padding:36px;
+  position:relative;overflow:hidden;
+}
+.legal-doc::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:4px;
+  background:linear-gradient(90deg,var(--navy),var(--gold));
+}
+.legal-seal{
+  width:72px;height:72px;background:var(--navy);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:28px;margin-bottom:20px;
+  box-shadow:0 8px 24px rgba(15,23,42,.2);
+}
+.legal-doc-title{font-size:20px;font-weight:800;color:var(--navy);letter-spacing:-.02em;margin-bottom:8px}
+.legal-doc-sub{font-size:14px;color:var(--muted);line-height:1.65;margin-bottom:24px}
+.legal-points{display:flex;flex-direction:column;gap:14px}
+.legal-point{
+  display:flex;align-items:flex-start;gap:12px;
+  padding:14px 16px;background:var(--white);border-radius:var(--r);
+  border:1px solid var(--border);
+  transition:border-color .2s;
+}
+.legal-point:hover{border-color:var(--border2)}
+.lp-ico{
+  width:32px;height:32px;border-radius:8px;
+  background:linear-gradient(135deg,var(--navy),var(--graphite));
+  display:flex;align-items:center;justify-content:center;
+  font-size:14px;flex-shrink:0;
+}
+.lp-text{font-size:13.5px;color:var(--text2);line-height:1.55}
+.lp-text b{color:var(--navy);font-weight:700}
+
+/* ═══════════════════════════════════════════════════════
+   FAQ
+═══════════════════════════════════════════════════════ */
+.faq{background:var(--bg);padding:var(--s6) 0}
+.faq-cols{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:56px}
+.faq-list{display:flex;flex-direction:column}
+.faq-item{border-bottom:1px solid var(--border);background:var(--white)}
+.faq-item:first-child{border-top:1px solid var(--border);border-radius:var(--r2) var(--r2) 0 0;overflow:hidden}
+.faq-item:last-child{border-radius:0 0 var(--r2) var(--r2);overflow:hidden}
+.faq-item.open{background:var(--white)}
+.faq-q{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:20px 26px;cursor:pointer;
+  font-size:15px;font-weight:600;color:var(--navy);
+  transition:color .2s;user-select:none;gap:16px;
+  letter-spacing:-.01em;
+}
+.faq-q:hover{color:var(--gold)}
+.faq-arr{
+  width:28px;height:28px;border-radius:50%;
+  border:1.5px solid var(--border);flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--navy);transition:all .3s;
+}
+.faq-item.open .faq-arr{background:var(--gold);border-color:var(--gold);color:#fff;transform:rotate(180deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .38s cubic-bezier(.16,1,.3,1)}
+.faq-a-in{padding:0 26px 20px;font-size:14px;color:var(--muted);line-height:1.72}
+.faq-item.open .faq-a{max-height:260px}
+
+/* разделитель между двумя колонками FAQ */
+.faq-cols .faq-list:first-child{border-right:1px solid var(--border)}
+
+/* ═══════════════════════════════════════════════════════
+   ФИНАЛЬНАЯ ФОРМА
+═══════════════════════════════════════════════════════ */
+.final{background:var(--navy);padding:var(--s6) 0;position:relative;overflow:hidden}
+/* декоративный фон */
+.final::before{
+  content:'';position:absolute;inset:0;
+  background:url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1400&q=60&auto=format') center/cover no-repeat;
+  opacity:.06;
+}
+.final-inner{
+  position:relative;z-index:1;
+  display:grid;grid-template-columns:1fr 480px;gap:80px;align-items:center;
+}
+.final-left h2{
+  font-size:clamp(32px,3.5vw,52px);
+  font-weight:900;letter-spacing:-.03em;
+  color:#fff;line-height:1.08;margin-bottom:18px;
+}
+.final-left h2 span{color:var(--gold)}
+.final-left p{font-size:16px;color:rgba(255,255,255,.6);line-height:1.75;margin-bottom:28px}
+.final-list{list-style:none;display:flex;flex-direction:column;gap:12px;margin-bottom:36px}
+.final-list li{
+  display:flex;align-items:center;gap:12px;
+  font-size:15px;color:rgba(255,255,255,.82);font-weight:500;
+}
+.final-list li::before{
+  content:'';width:20px;height:20px;flex-shrink:0;
+  background:rgba(198,169,107,.15);border:1px solid rgba(198,169,107,.3);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 10 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 4l2.5 2.5L9 1' stroke='%23C6A96B' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:center;background-size:10px;
+}
+.final-counter{
+  display:inline-flex;align-items:center;gap:10px;
+  background:rgba(198,169,107,.12);border:1px solid rgba(198,169,107,.25);
+  border-radius:12px;padding:12px 18px;
+}
+.final-counter-n{font-size:28px;font-weight:900;color:var(--gold);letter-spacing:-.03em;line-height:1}
+.final-counter-l{font-size:12px;color:rgba(255,255,255,.55);line-height:1.4;font-weight:500}
+
+/* форма */
+.final-form{
+  background:#fff;border-radius:var(--r4);
+  padding:40px 36px;
+  box-shadow:0 40px 80px rgba(0,0,0,.3);
+}
+.ff-title{font-size:20px;font-weight:800;color:var(--navy);letter-spacing:-.02em;margin-bottom:6px}
+.ff-sub{font-size:13px;color:var(--muted);margin-bottom:24px}
+.fi{
+  width:100%;border:1.5px solid var(--border);border-radius:var(--r);
+  padding:13px 16px;font-family:inherit;font-size:14px;font-weight:500;
+  color:var(--navy);background:#fff;transition:all .2s;
+  display:block;margin-bottom:12px;
+}
+.fi:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(198,169,107,.1)}
+.fi::placeholder{color:var(--muted);font-weight:400}
+.fi-phone{display:flex;border:1.5px solid var(--border);border-radius:var(--r);overflow:hidden;margin-bottom:12px;transition:all .2s}
+.fi-phone:focus-within{border-color:var(--gold);box-shadow:0 0 0 3px rgba(198,169,107,.1)}
+.fi-flag{display:flex;align-items:center;gap:4px;padding:0 12px 0 14px;font-size:13px;color:var(--text2);flex-shrink:0;border-right:1.5px solid var(--border);white-space:nowrap;font-weight:600}
+.fi-phone input{flex:1;border:none;outline:none;padding:13px 14px;font-size:14px;color:var(--navy);font-family:inherit;background:transparent;font-weight:500}
+.fi-phone input::placeholder{color:var(--muted);font-weight:400}
+.fcheck{display:flex;align-items:flex-start;gap:9px;margin-bottom:16px;font-size:12px;color:var(--muted);line-height:1.5}
+.fcheck input[type=checkbox]{width:15px;height:15px;margin-top:1px;accent-color:var(--gold);flex-shrink:0;cursor:pointer}
+.fcheck a{color:var(--gold)}
+.ff-ok{display:none;text-align:center;padding:24px 0}
+.ff-ok .ok{font-size:42px;margin-bottom:12px}
+.ff-ok h3{font-size:20px;font-weight:800;color:var(--navy);margin-bottom:6px}
+.ff-ok p{font-size:14px;color:var(--muted)}
+
+/* ═══════════════════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════════════════ */
+footer{background:var(--graphite);padding:52px 0 28px}
+.foot-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-bottom:40px;align-items:start}
+/* ⬇ РЕКВИЗИТЫ */
+.foot-req p{font-size:13px;color:rgba(255,255,255,.38);line-height:1.8}
+/* ⬆ */
+.foot-links{display:flex;flex-direction:column;align-items:flex-end;gap:10px}
+.foot-links a{font-size:13.5px;color:rgba(255,255,255,.45);transition:color .2s}
+.foot-links a:hover{color:rgba(255,255,255,.85)}
+.foot-bottom{
+  display:flex;justify-content:space-between;align-items:center;
+  border-top:1px solid rgba(255,255,255,.07);padding-top:22px;
+  flex-wrap:wrap;gap:14px;
+}
+.foot-copy{font-size:12px;color:rgba(255,255,255,.28)}
+.fsoc{display:flex;gap:10px}
+.fsoc a{width:34px;height:34px;border-radius:8px;border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.4);transition:all .2s}
+.fsoc a svg{width:14px;height:14px}
+.fsoc a:hover{border-color:rgba(198,169,107,.5);color:var(--gold)}
+
+/* ═══════════════════════════════════════════════════════
+   POPUP
+═══════════════════════════════════════════════════════ */
+.pov{display:none;position:fixed;inset:0;z-index:700;background:rgba(15,23,42,.7);backdrop-filter:blur(8px);align-items:center;justify-content:center}
+.pov.on{display:flex}
+.pop{
+  background:#fff;border-radius:var(--r4);
+  padding:44px 48px;width:90%;max-width:480px;
+  position:relative;animation:popin .35s cubic-bezier(.16,1,.3,1);
+}
+@keyframes popin{from{opacity:0;transform:scale(.88) translateY(20px)}to{opacity:1;transform:none}}
+.pop-x{position:absolute;top:16px;right:20px;background:none;border:none;font-size:20px;color:var(--muted);transition:color .2s;line-height:1}
+.pop-x:hover{color:var(--navy)}
+.pop-tag{display:inline-block;background:var(--gold);color:#fff;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:5px 12px;border-radius:4px;margin-bottom:14px}
+.pop h3{font-size:24px;font-weight:800;color:var(--navy);letter-spacing:-.02em;margin-bottom:8px}
+.pop .sub{font-size:14px;color:var(--muted);margin-bottom:24px;line-height:1.6}
+
+/* ═══════════════════════════════════════════════════════
+   ФИКСИРОВАННАЯ КНОПКА
+═══════════════════════════════════════════════════════ */
+.fixed-btn{
+  position:fixed;bottom:28px;right:28px;z-index:500;
+  background:var(--gold);color:#fff;
+  border:none;border-radius:var(--r2);
+  font-size:14px;font-weight:700;
+  padding:14px 22px;
+  box-shadow:0 8px 32px rgba(198,169,107,.45);
+  transition:all .25s;
+  display:flex;align-items:center;gap:8px;
+  animation:float-in .5s cubic-bezier(.16,1,.3,1) both;
+  animation-delay:2s;
+}
+.fixed-btn::before{content:'';width:8px;height:8px;border-radius:50%;background:#fff;animation:blink 2s infinite}
+.fixed-btn:hover{background:var(--gold2);transform:translateY(-3px) scale(1.02);box-shadow:0 14px 40px rgba(198,169,107,.5)}
+@keyframes float-in{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+/* ═══════════════════════════════════════════════════════
+   MOBILE STICKY
+═══════════════════════════════════════════════════════ */
+.mob-cta{
+  display:none;position:fixed;bottom:0;inset-x:0;z-index:490;
+  background:#fff;border-top:1px solid var(--border);padding:12px 20px;
+}
+.mob-cta button{width:100%;background:var(--gold);border:none;border-radius:var(--r2);color:#fff;font-size:15px;font-weight:700;padding:15px}
+
+/* ═══════════════════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════════════════ */
+@media(max-width:1100px){
+  .hero-inner{grid-template-columns:1fr;gap:48px;padding:120px 60px 60px}
+  .hero-calc{max-width:500px}
+  .deal-steps{grid-template-columns:1fr 1fr;gap:36px}
+  .deal-steps::before{display:none}
+  .legal-layout{grid-template-columns:1fr}
+  .final-inner{grid-template-columns:1fr}
+  .final-form{max-width:500px}
+}
+@media(max-width:900px){
+  .objects-grid{grid-template-columns:1fr 1fr}
+  .cases-grid{grid-template-columns:1fr}
+  .vs-grid{grid-template-columns:1fr}
+  .trust-row{grid-template-columns:1fr 1fr}
+  .trust-cell:nth-child(2){border-right:none}
+  .trust-cell:nth-child(3),.trust-cell:nth-child(4){border-top:1px solid rgba(255,255,255,.07)}
+  .faq-cols{grid-template-columns:1fr}
+  .faq-cols .faq-list:first-child{border-right:none}
+  .foot-grid{grid-template-columns:1fr}
+  .foot-links{align-items:flex-start}
+}
+@media(max-width:768px){
+  header{padding:0 20px}
+  .W,.W--narrow,.hero-inner{padding-left:20px;padding-right:20px}
+  section,.objects,.deal,.conditions,.versus,.cases,.legal,.faq,.final{padding:64px 0}
+  .hdr-nav,#hdCta,.hdr-counter{display:none}
+  .burger{display:flex}
+  .mob-nav{padding:20px}
+  .hero-inner{padding:100px 20px 48px}
+  .objects-grid{grid-template-columns:1fr}
+  .pop{padding:28px 22px}
+  .fixed-btn{bottom:80px}
+  .mob-cta{display:block}
+  body{padding-bottom:72px}
+}
+</style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════
+     HEADER
+════════════════════════════════════ -->
+<header id="mainHdr">
+  <!-- ⬇ ЛОГОТИП -->
+  <div class="logo" onclick="location.href='#'" style="cursor:pointer">
+    <div class="logo-mark">F</div>
+    <span>[НАЗВАНИЕ]</span>
+  </div>
+  <!-- ⬆ -->
+  <nav class="hdr-nav">
+    <a href="#objects">Объекты</a>
+    <a href="#how">Условия</a>
+    <a href="#versus">Почему мы</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+  <div class="hdr-right">
+    <div class="hdr-counter" id="appCounter">Сейчас <b id="appCounterN" style="color:var(--navy);font-weight:900">27</b>&nbsp;заявок сегодня</div>
+    <button class="btn-gold" id="hdCta" onclick="openPop()" style="padding:10px 20px;font-size:14px">Оставить заявку</button>
+    <button class="burger" id="brg"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<div class="mob-nav" id="mn">
+  <a href="#objects" onclick="cn()">Объекты</a>
+  <a href="#how" onclick="cn()">Условия</a>
+  <a href="#versus" onclick="cn()">Почему мы</a>
+  <a href="#faq" onclick="cn()">FAQ</a>
+  <button class="btn-gold" onclick="openPop();cn()" style="justify-content:center">Оставить заявку</button>
+</div>
+
+
+<!-- ════════════════════════════════════
+     HERO — fullscreen + калькулятор
+════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+
+    <!-- ЛЕВАЯ ЧАСТЬ -->
+    <div class="hero-left">
+      <div class="hero-badge">Прямое залоговое финансирование · 102-ФЗ</div>
+
+      <h1 class="hero-h1">
+        Финансирование под залог<br>
+        <span>недвижимости до 70 %</span><br>
+        от стоимости
+      </h1>
+      <p class="hero-sub">
+        <b>Прямые инвестиции от партнёров. По 102-ФЗ.</b><br>
+        Вы остаётесь собственником. Без банков, без отказов.
+      </p>
+      <div class="hero-btns">
+        <button class="btn-navy" onclick="location.href='#final'">Рассчитать условия</button>
+        <button class="btn-gold" onclick="openPop()">Оставить заявку</button>
+      </div>
+      <div class="hero-trust">
+        <div class="htrust-item">
+          <div class="htrust-icon">⚡</div>
+          <span class="htrust-text">Решение за 24 часа</span>
+        </div>
+        <div class="htrust-item">
+          <div class="htrust-icon">🔒</div>
+          <span class="htrust-text">Росреестр · 102-ФЗ</span>
+        </div>
+        <div class="htrust-item">
+          <div class="htrust-icon">📋</div>
+          <span class="htrust-text">Прозрачный договор</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- КАЛЬКУЛЯТОР -->
+    <div class="hero-calc">
+      <div class="calc-title">Быстрый расчёт займа</div>
+      <div class="calc-sub">Введите стоимость вашей недвижимости</div>
+
+      <div id="calcBody">
+        <label class="calc-label">Стоимость объекта</label>
+        <div class="calc-input-wrap">
+          <input type="number" class="calc-input" id="calcValue" value="5000000" step="500000"
+                 oninput="calcUpdate()" style="padding-right:38px">
+          <span class="calc-input-suffix">₽</span>
+        </div>
+        <input type="range" class="calc-range" id="calcRange"
+               min="1000000" max="50000000" step="500000" value="5000000"
+               oninput="document.getElementById('calcValue').value=this.value;calcUpdate()">
+        <div class="calc-range-labels"><span>1 млн ₽</span><span>50 млн ₽</span></div>
+
+        <label class="calc-label">Срок займа</label>
+        <div class="calc-input-wrap">
+          <input type="number" class="calc-input" id="calcTerm" value="12" min="1" max="120"
+                 oninput="calcUpdate()" style="padding-right:38px">
+          <span class="calc-input-suffix">мес</span>
+        </div>
+
+        <div class="calc-result" id="calcResult">
+          <div class="calc-result-row">
+            <span class="calc-result-label">Максимальная сумма займа (70%)</span>
+            <span class="calc-result-val accent" id="rSum">3 500 000 ₽</span>
+          </div>
+          <div class="calc-result-row">
+            <span class="calc-result-label">Ставка от</span>
+            <span class="calc-result-val" id="rRate">24% годовых</span>
+          </div>
+          <div class="calc-result-row">
+            <span class="calc-result-label">Ежемесячный платёж от</span>
+            <span class="calc-result-val" id="rMonthly">70 000 ₽</span>
+          </div>
+        </div>
+
+        <label class="calc-label">Ваш телефон</label>
+        <div class="calc-input-wrap" style="margin-bottom:12px">
+          <input type="tel" class="calc-input" placeholder="+7 (000) 000-00-00" id="calc-phone" style="padding-right:16px">
+        </div>
+        <div class="calc-check">
+          <input type="checkbox" id="calc-agree">
+          <label for="calc-agree">Даю <a href="#docs">согласие на обработку персональных данных</a></label>
+        </div>
+        <button class="btn-gold" style="width:100%;justify-content:center;font-size:15px"
+                onclick="calcSubmit()">
+          Получить точный расчёт →
+        </button>
+      </div>
+      <div class="calc-ok" id="calcOk">
+        <div class="ck">✓</div>
+        <p>Заявка на расчёт принята!</p>
+        <small>Перезвоним в течение 5 минут.</small>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════
+     TRUST BAR — цифры доверия
+════════════════════════════════════ -->
+<div class="trust-bar">
+  <div class="trust-row">
+    <div class="trust-cell fa d1">
+      <div class="tc-n"><span class="cu" data-to="10">0</span><span class="gold">+ лет</span></div>
+      <div class="tc-l">на рынке залогового финансирования</div>
+      <div class="tc-sub">с 2015 года</div>
+    </div>
+    <div class="trust-cell fa d2">
+      <div class="tc-n"><span class="cu" data-to="2">0</span><span class="gold"> млрд ₽</span></div>
+      <div class="tc-l">профинансировано</div>
+      <div class="tc-sub">за историю работы</div>
+    </div>
+    <div class="trust-cell fa d3">
+      <div class="tc-n"><span class="cu" data-to="87">0</span><span class="gold">%</span></div>
+      <div class="tc-l">заявок одобряется</div>
+      <div class="tc-sub">среднее по рынку — 41%</div>
+    </div>
+    <div class="trust-cell fa d4">
+      <div class="tc-n"><span class="cu" data-to="500">0</span><span class="gold">+</span></div>
+      <div class="tc-l">успешных сделок</div>
+      <div class="tc-sub">с 0% дефолтов</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════
+     ПРОФИНАНСИРОВАННЫЕ ОБЪЕКТЫ
+════════════════════════════════════ -->
+<section class="objects" id="objects">
+  <div class="W">
+    <div class="sec-head">
+      <div class="fa"><span class="eyebrow">Наш портфель</span></div>
+      <h2 class="h2 fa">Профинансированные <em>объекты</em></h2>
+      <p class="body-lg fa" style="margin-top:14px;max-width:560px">Реальные сделки нашего портфеля. Каждый объект прошёл юридическую проверку и оценку.</p>
+    </div>
+    <div class="objects-grid">
+      <div class="obj-card fa">
+        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&q=85&auto=format" alt="Жилой комплекс Москва">
+        <div class="obj-overlay">
+          <span class="obj-tag">Выдан</span>
+          <div class="obj-city">Москва · ЖК «Центр»</div>
+          <div class="obj-sum">18 500 000 ₽</div>
+          <div class="obj-detail">Срок: 18 мес · Ставка: 26% · LTV: 65%</div>
+        </div>
+      </div>
+      <div class="obj-card fa d1">
+        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&q=85&auto=format" alt="Коттедж Подмосковье">
+        <div class="obj-overlay">
+          <span class="obj-tag">Погашен</span>
+          <div class="obj-city">Подмосковье · Коттедж</div>
+          <div class="obj-sum">8 200 000 ₽</div>
+          <div class="obj-detail">Срок: 12 мес · Ставка: 24% · LTV: 60%</div>
+        </div>
+      </div>
+      <div class="obj-card fa d2">
+        <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?w=600&q=85&auto=format" alt="Коммерческая недвижимость СПб">
+        <div class="obj-overlay">
+          <span class="obj-tag">Выдан</span>
+          <div class="obj-city">Санкт-Петербург · Офис</div>
+          <div class="obj-sum">32 000 000 ₽</div>
+          <div class="obj-detail">Срок: 24 мес · Ставка: 28% · LTV: 70%</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════
+     КАК ПРОХОДИТ СДЕЛКА — 5 шагов
+════════════════════════════════════ -->
+<section class="deal" id="how">
+  <div class="W">
+    <div class="fa"><span class="eyebrow">Процесс</span></div>
+    <h2 class="h2 fa">Как проходит <em>сделка</em></h2>
+    <div class="deal-steps">
+      <div class="ds fa d1">
+        <div class="ds-num">01</div>
+        <div class="ds-title">Заявка и анализ</div>
+        <div class="ds-desc">Оставляете заявку — менеджер перезванивает в течение 5 минут. Анализируем объект и вашу ситуацию.</div>
+      </div>
+      <div class="ds fa d2">
+        <div class="ds-num">02</div>
+        <div class="ds-title">Оценка объекта</div>
+        <div class="ds-desc">Независимая оценка недвижимости. Определяем LTV и максимально возможную сумму финансирования.</div>
+      </div>
+      <div class="ds fa d3">
+        <div class="ds-num">03</div>
+        <div class="ds-title">Подготовка договора</div>
+        <div class="ds-desc">Договор займа по 102-ФЗ. Все условия — ставка, срок, сумма — зафиксированы без изменений.</div>
+      </div>
+      <div class="ds fa d4">
+        <div class="ds-num">04</div>
+        <div class="ds-title">Росреестр</div>
+        <div class="ds-desc">Регистрация ипотеки в Росреестре. Вы остаётесь собственником. Обременение — только залог.</div>
+      </div>
+      <div class="ds fa d5">
+        <div class="ds-num">05</div>
+        <div class="ds-title">Деньги на счёт</div>
+        <div class="ds-desc">Средства поступают в день регистрации обременения. Максимальный срок — 1 рабочий день.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════
+     УСЛОВИЯ ЗАЙМА — таблица
+════════════════════════════════════ -->
+<section class="conditions">
+  <div class="W">
+    <div class="fa"><span class="eyebrow">Параметры</span></div>
+    <h2 class="h2 fa">Условия <em>финансирования</em></h2>
+    <p class="body-lg fa" style="margin-top:14px;max-width:560px">Фиксированные условия в договоре. Никаких изменений ставки или скрытых платежей.</p>
+    <table class="cond-table fa">
+      <thead>
+        <tr>
+          <th>Параметр</th>
+          <th>Стандарт</th>
+          <th>Оптимум</th>
+          <th style="color:var(--gold)">Экспресс <span class="cond-badge">популярный</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Сумма займа</td>
+          <td>500 тыс — 10 млн ₽</td>
+          <td>10 — 50 млн ₽</td>
+          <td>До 30 млн ₽</td>
+        </tr>
+        <tr>
+          <td>Ставка (годовых)</td>
+          <td>от 36%</td>
+          <td>от 28%</td>
+          <td>от 24%</td>
+        </tr>
+        <tr>
+          <td>Срок займа</td>
+          <td>1 — 6 мес</td>
+          <td>6 — 24 мес</td>
+          <td>3 — 12 мес</td>
+        </tr>
+        <tr>
+          <td>Максимальный LTV</td>
+          <td>до 60%</td>
+          <td>до 65%</td>
+          <td>до 70%</td>
+        </tr>
+        <tr>
+          <td>Решение</td>
+          <td>3 дня</td>
+          <td>2 дня</td>
+          <td>24 часа</td>
+        </tr>
+        <tr>
+          <td>Досрочное погашение</td>
+          <td>с 3-го мес</td>
+          <td>с 1-го мес</td>
+          <td>Без комиссии</td>
+        </tr>
+        <tr>
+          <td>Документы</td>
+          <td>Паспорт + ЕГРН</td>
+          <td>Паспорт + ЕГРН</td>
+          <td>Только паспорт</td>
+        </tr>
+        <tr>
+          <td>Кредитная история</td>
+          <td>Не проверяется</td>
+          <td>Не проверяется</td>
+          <td>Не проверяется</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════
+     МЫ vs БАНК
+════════════════════════════════════ -->
+<section class="versus" id="versus">
+  <div class="W">
+    <div class="fa"><span class="eyebrow">Сравнение</span></div>
+    <h2 class="h2 fa" style="color:#fff">Почему не банк?</h2>
+    <div class="vs-grid">
+      <!-- НАС -->
+      <div class="vs-col vs-col--us fa fa-l">
+        <div class="vs-col-head">
+          <!-- ⬇ НАЗВАНИЕ в сравнении — замените -->
+          <span class="vs-name">[НАЗВАНИЕ]</span>
+          <!-- ⬆ -->
+          <span class="vs-badge vs-badge--us">Прямой кредитор</span>
+        </div>
+        <div class="vs-rows">
+          <div class="vs-row"><div class="vs-check vs-check--yes">✓</div><div class="vs-text"><b>Без проверки кредитной истории</b> — решение по стоимости объекта</div></div>
+          <div class="vs-row"><div class="vs-check vs-check--yes">✓</div><div class="vs-text"><b>Деньги за 1 день</b> — от подачи заявки до поступления</div></div>
+          <div class="vs-row"><div class="vs-check vs-check--yes">✓</div><div class="vs-text"><b>До 70% LTV</b> — максимально возможный залог</div></div>
+          <div class="vs-row"><div class="vs-check vs-check--yes">✓</div><div class="vs-text"><b>Только паспорт и ЕГРН</b> — никаких справок о доходах</div></div>
+          <div class="vs-row"><div class="vs-check vs-check--yes">✓</div><div class="vs-text"><b>Вы собственник</b> — право собственности не переходит</div></div>
+          <div class="vs-row"><div class="vs-check vs-check--yes">✓</div><div class="vs-text"><b>Фиксированная ставка</b> в договоре — не меняется</div></div>
+          <div class="vs-row"><div class="vs-check vs-check--yes">✓</div><div class="vs-text"><b>87% одобрений</b> — работаем с любой историей</div></div>
+        </div>
+      </div>
+      <!-- БАНК -->
+      <div class="vs-col fa fa-r">
+        <div class="vs-col-head">
+          <span class="vs-name">Банк / МФО</span>
+          <span class="vs-badge vs-badge--bank">Классическое кредитование</span>
+        </div>
+        <div class="vs-rows">
+          <div class="vs-row"><div class="vs-check vs-check--no">✗</div><div class="vs-text">Жёсткая <b style="color:#fff">проверка КИ</b> — отказ при любых просрочках</div></div>
+          <div class="vs-row"><div class="vs-check vs-check--no">✗</div><div class="vs-text">Решение <b style="color:#fff">от 7 до 30 дней</b> — бюрократические процедуры</div></div>
+          <div class="vs-row"><div class="vs-check vs-check--mid">~</div><div class="vs-text"><b style="color:#fff">До 50% LTV</b> — консервативная оценка объекта</div></div>
+          <div class="vs-row"><div class="vs-check vs-check--no">✗</div><div class="vs-text">Требуется <b style="color:#fff">полный пакет документов</b> — 2-НДФЛ, трудовая, поручители</div></div>
+          <div class="vs-row"><div class="vs-check vs-check--yes">✓</div><div class="vs-text">Право собственности сохраняется</div></div>
+          <div class="vs-row"><div class="vs-check vs-check--no">✗</div><div class="vs-text"><b style="color:#fff">Плавающая ставка</b> — может измениться в одностороннем порядке</div></div>
+          <div class="vs-row"><div class="vs-check vs-check--no">✗</div><div class="vs-text"><b style="color:#fff">Только 41% одобрений</b> — массовые отказы</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════
+     КЕЙСЫ + ОТЗЫВЫ
+════════════════════════════════════ -->
+<section class="cases">
+  <div class="W">
+    <div class="fa"><span class="eyebrow">Реальные сделки</span></div>
+    <h2 class="h2 fa">Кейсы <em>клиентов</em></h2>
+    <div class="cases-grid">
+      <div class="case-card fa fa-l">
+        <div class="case-photo">
+          <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=700&q=80&auto=format" alt="Коммерческая недвижимость кейс">
+          <div class="case-photo-overlay"></div>
+        </div>
+        <div class="case-body">
+          <div class="case-meta">
+            <span class="case-city">Москва · 2024</span>
+            <span class="case-tag">Кассовый разрыв</span>
+          </div>
+          <div class="case-title">Займ под залог офисного помещения 340 м²</div>
+          <div class="case-desc">Собственник торгово-офисного помещения в ЦАО столкнулся с кассовым разрывом. Банк отказал из-за убыточного 2022 года. Закрыли вопрос за 48 часов.</div>
+          <div class="case-numbers">
+            <div class="cn-item"><div class="cn-val">28<em> млн</em></div><div class="cn-label">Сумма займа</div></div>
+            <div class="cn-item"><div class="cn-val">26<em>%</em></div><div class="cn-label">Ставка</div></div>
+            <div class="cn-item"><div class="cn-val">48<em> ч</em></div><div class="cn-label">До выдачи</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="case-card fa fa-r">
+        <div class="case-photo">
+          <img src="https://images.unsplash.com/photo-1448630360428-65456885c650?w=700&q=80&auto=format" alt="Жилая недвижимость кейс">
+          <div class="case-photo-overlay"></div>
+        </div>
+        <div class="case-body">
+          <div class="case-meta">
+            <span class="case-city">СПб · 2024</span>
+            <span class="case-tag">Рефинансирование</span>
+          </div>
+          <div class="case-title">Рефинансирование ипотеки + первоначальный взнос</div>
+          <div class="case-desc">Предприниматель хотел купить новую квартиру, но не хватало взноса. Использовали имеющееся жильё как залог — закрыли задачу за 3 дня.</div>
+          <div class="case-numbers">
+            <div class="cn-item"><div class="cn-val">6.4<em> млн</em></div><div class="cn-label">Сумма займа</div></div>
+            <div class="cn-item"><div class="cn-val">24<em>%</em></div><div class="cn-label">Ставка</div></div>
+            <div class="cn-item"><div class="cn-val">3<em> дня</em></div><div class="cn-label">До выдачи</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ОТЗЫВЫ - карусель -->
+  <div style="margin-top:80px">
+    <div class="W">
+      <div class="fa"><span class="eyebrow">Отзывы клиентов</span></div>
+    </div>
+    <div class="reviews-track-wrap" style="margin-top:36px">
+      <div class="reviews-track">
+        <!-- SET 1 -->
+        <div class="rev"><div class="rev-stars">★★★★★</div><p class="rev-text">«Получил 18 миллионов под залог квартиры за 36 часов. Банк отказал из-за просрочек 4-летней давности. Здесь никого не интересовала история — только объект.»</p><div class="rev-author">Дмитрий К.</div><div class="rev-role">Предприниматель, Москва</div></div>
+        <div class="rev"><div class="rev-stars">★★★★★</div><p class="rev-text">«Нужно было закрыть кассовый разрыв срочно. Оставил заявку в 9 утра, к 16:00 деньги уже были на счёте. Никаких лишних документов.»</p><div class="rev-author">Алексей В.</div><div class="rev-role">Владелец ООО, СПб</div></div>
+        <div class="rev"><div class="rev-stars">★★★★★</div><p class="rev-text">«Очень прозрачные условия. Всё, что обсуждали — зафиксировано в договоре. Ставка не менялась, никаких скрытых платежей за весь срок.»</p><div class="rev-author">Ирина С.</div><div class="rev-role">Частный инвестор</div></div>
+        <div class="rev"><div class="rev-stars">★★★★★</div><p class="rev-text">«Обратился с нулевой кредитной историей — ИП без официального дохода. Одобрили 5,5 млн под загородный дом за два дня. Впечатлён скоростью.»</p><div class="rev-author">Михаил Д.</div><div class="rev-role">ИП, Московская обл.</div></div>
+        <div class="rev"><div class="rev-stars">★★★★★</div><p class="rev-text">«Рефинансировал кредит с плохой историей. До этого 4 банка отказали. Здесь оценили только стоимость квартиры — и выдали нужную сумму.»</p><div class="rev-author">Андрей М.</div><div class="rev-role">Руководитель отдела</div></div>
+        <div class="rev"><div class="rev-stars">★★★★★</div><p class="rev-text">«Брал займ под коммерческое помещение дважды. Оба раза — быстро, честно, без сюрпризов. Буду рекомендовать всем предпринимателям.»</p><div class="rev-author">Сергей Т.</div><div class="rev-role">Собственник помещения</div></div>
+        <!-- SET 2 (дубль) -->
+        <div class="rev"><div class="rev-stars">★★★★★</div><p class="rev-text">«Получил 18 миллионов под залог квартиры за 36 часов. Банк отказал из-за просрочек 4-летней давности. Здесь никого не интересовала история — только объект.»</p><div class="rev-author">Дмитрий К.</div><div class="rev-role">Предприниматель, Москва</div></div>
+        <div class="rev"><div class="rev-stars">★★★★★</div><p class="rev-text">«Нужно было закрыть кассовый разрыв срочно. Оставил заявку в 9 утра, к 16:00 деньги уже были на счёте. Никаких лишних документов.»</p><div class="rev-author">Алексей В.</div><div class="rev-role">Владелец ООО, СПб</div></div>
+        <div class="rev"><div class="rev-stars">★★★★★</div><p class="rev-text">«Обратился с нулевой кредитной историей — ИП без официального дохода. Одобрили 5,5 млн под загородный дом за два дня. Впечатлён скоростью.»</p><div class="rev-author">Михаил Д.</div><div class="rev-role">ИП, Московская обл.</div></div>
+        <div class="rev"><div class="rev-stars">★★★★★</div><p class="rev-text">«Брал займ под коммерческое помещение дважды. Оба раза — быстро, честно, без сюрпризов. Буду рекомендовать всем предпринимателям.»</p><div class="rev-author">Сергей Т.</div><div class="rev-role">Собственник помещения</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════
+     ЮРИДИЧЕСКАЯ БЕЗОПАСНОСТЬ
+════════════════════════════════════ -->
+<section class="legal">
+  <div class="W">
+    <div class="legal-layout">
+      <div class="fa fa-l">
+        <span class="eyebrow">Правовая база</span>
+        <h2 class="h2" style="margin-bottom:18px">Юридическая <em>безопасность</em></h2>
+        <p class="body-lg" style="margin-bottom:28px">Каждая сделка проводится строго по российскому законодательству. Ваши права защищены на каждом этапе.</p>
+        <div class="legal-doc">
+          <div class="legal-seal">⚖️</div>
+          <div class="legal-doc-title">Федеральный закон № 102-ФЗ</div>
+          <div class="legal-doc-sub">«Об ипотеке (залоге недвижимости)». Все наши сделки проводятся в строгом соответствии с данным федеральным законом.</div>
+          <div class="legal-points">
+            <div class="legal-point">
+              <div class="lp-ico">🏛️</div>
+              <div class="lp-text"><b>Росреестр</b> — обязательная регистрация обременения. Защита от мошенничества.</div>
+            </div>
+            <div class="legal-point">
+              <div class="lp-ico">📜</div>
+              <div class="lp-text"><b>Нотариальное удостоверение</b> — договор займа и залога заверяются нотариусом.</div>
+            </div>
+            <div class="legal-point">
+              <div class="lp-ico">🔐</div>
+              <div class="lp-text"><b>Право собственности</b> — не переходит к кредитору. Вы остаётесь собственником всё время.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="fa fa-r" style="display:flex;flex-direction:column;gap:20px;padding-top:60px">
+        <div class="legal-point" style="background:var(--bg);padding:24px 22px">
+          <div class="lp-ico" style="width:40px;height:40px;font-size:18px">✅</div>
+          <div>
+            <b style="display:block;font-size:15px;color:var(--navy);margin-bottom:4px">Вы остаётесь собственником</b>
+            <div class="lp-text">Залог — это не продажа. Право собственности остаётся у вас на весь срок займа. После выплаты обременение снимается.</div>
+          </div>
+        </div>
+        <div class="legal-point" style="background:var(--bg);padding:24px 22px">
+          <div class="lp-ico" style="width:40px;height:40px;font-size:18px">📋</div>
+          <div>
+            <b style="display:block;font-size:15px;color:var(--navy);margin-bottom:4px">Прозрачный договор займа</b>
+            <div class="lp-text">Ставка, срок, сумма, штрафы — всё фиксируется в договоре. После подписания ни одно условие не может быть изменено в одностороннем порядке.</div>
+          </div>
+        </div>
+        <div class="legal-point" style="background:var(--bg);padding:24px 22px">
+          <div class="lp-ico" style="width:40px;height:40px;font-size:18px">🏦</div>
+          <div>
+            <b style="display:block;font-size:15px;color:var(--navy);margin-bottom:4px">Независимая оценка</b>
+            <div class="lp-text">Стоимость объекта определяется сертифицированным оценщиком. Никакого занижения оценки — только рыночная стоимость.</div>
+          </div>
+        </div>
+        <div class="legal-point" style="background:var(--bg);padding:24px 22px">
+          <div class="lp-ico" style="width:40px;height:40px;font-size:18px">⚡</div>
+          <div>
+            <b style="display:block;font-size:15px;color:var(--navy);margin-bottom:4px">Досрочное погашение</b>
+            <div class="lp-text">Право на досрочное погашение защищено законом. По тарифу «Экспресс» — без комиссии в любой момент.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════
+     FAQ — 12 вопросов в двух колонках
+════════════════════════════════════ -->
+<section class="faq" id="faq">
+  <div class="W">
+    <div class="fa"><span class="eyebrow">FAQ</span></div>
+    <h2 class="h2 fa" style="margin-bottom:14px">Часто задаваемые <em>вопросы</em></h2>
+    <p class="body fa" style="max-width:500px">Не нашли ответ — позвоните или напишите, ответим лично.</p>
+    <div class="faq-cols" style="margin-top:48px">
+      <!-- КОЛОНКА 1 -->
+      <div class="faq-list fa fa-l">
+        <div class="faq-item">
+          <div class="faq-q" onclick="tFaq(this)">Что такое займ под залог недвижимости?<span class="faq-arr"><svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l4 4 4-4"/></svg></span></div>
+          <div class="faq-a"><div class="faq-a-in">Это денежный займ, обеспеченный залогом вашей недвижимости по 102-ФЗ. Вы получаете деньги, оставаясь собственником объекта. На недвижимость накладывается обременение (ипотека), которое снимается после погашения займа.</div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="tFaq(this)">Дадут ли займ с плохой кредитной историей?<span class="faq-arr"><svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l4 4 4-4"/></svg></span></div>
+          <div class="faq-a"><div class="faq-a-in">Да. Решение о займе принимается исключительно на основе стоимости и ликвидности объекта. Кредитная история не проверяется ни в одной из наших программ.</div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="tFaq(this)">Какую максимальную сумму можно получить?<span class="faq-arr"><svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l4 4 4-4"/></svg></span></div>
+          <div class="faq-a"><div class="faq-a-in">До 70% от рыночной стоимости объекта (LTV). При стоимости недвижимости 10 млн ₽ максимальная сумма — 7 млн ₽. Рыночная стоимость определяется независимым оценщиком.</div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="tFaq(this)">Можно ли заложить ипотечную квартиру?<span class="faq-arr"><svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l4 4 4-4"/></svg></span></div>
+          <div class="faq-a"><div class="faq-a-in">Да, в большинстве случаев. Рассматривается рефинансирование действующей ипотеки с одновременной выдачей дополнительных средств. Требуется согласие текущего кредитора.</div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="tFaq(this)">Я теряю право собственности?<span class="faq-arr"><svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l4 4 4-4"/></svg></span></div>
+          <div class="faq-a"><div class="faq-a-in">Нет. Право собственности остаётся за вами на весь срок займа. Залог — это только обременение в Росреестре. После полного погашения обременение снимается автоматически.</div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="tFaq(this)">Какие объекты принимаются в залог?<span class="faq-arr"><svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l4 4 4-4"/></svg></span></div>
+          <div class="faq-a"><div class="faq-a-in">Квартиры, дома с земельными участками, таунхаусы, коммерческие помещения, офисы, склады, земельные участки под ИЖС. Рассматриваем объекты по всей России.</div></div>
+        </div>
+      </div>
+      <!-- КОЛОНКА 2 -->
+      <div class="faq-list fa fa-r">
+        <div class="faq-item">
+          <div class="faq-q" onclick="tFaq(this)">Как быстро выдаётся займ?<span class="faq-arr"><svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l4 4 4-4"/></svg></span></div>
+          <div class="faq-a"><div class="faq-a-in">По тарифу «Экспресс» — в течение 24 часов с момента подачи заявки. Стандартные программы — 2–3 рабочих дня. Включает оценку объекта, подготовку договора и регистрацию в Росреестре.</div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="tFaq(this)">Нужны ли справки о доходах?<span class="faq-arr"><svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l4 4 4-4"/></svg></span></div>
+          <div class="faq-a"><div class="faq-a-in">Нет. Для тарифа «Экспресс» достаточно паспорта. Для стандартных программ — паспорт и выписка из ЕГРН. Никаких 2-НДФЛ, трудовых книжек или поручителей.</div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="tFaq(this)">Возможно ли досрочное погашение?<span class="faq-arr"><svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l4 4 4-4"/></svg></span></div>
+          <div class="faq-a"><div class="faq-a-in">Да. По тарифу «Экспресс» — без штрафов в любой момент. По стандартным программам — с 1-го месяца. Право на досрочное погашение гарантировано 102-ФЗ.</div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="tFaq(this)">Кто проводит оценку недвижимости?<span class="faq-arr"><svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l4 4 4-4"/></svg></span></div>
+          <div class="faq-a"><div class="faq-a-in">Независимый сертифицированный оценщик, аккредитованный СРО. Оценка производится по рыночной стоимости — без занижения. Стоимость оценки включена в тарифе «Экспресс».</div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="tFaq(this)">Что происходит при просрочке платежа?<span class="faq-arr"><svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l4 4 4-4"/></svg></span></div>
+          <div class="faq-a"><div class="faq-a-in">Сначала — предупреждение и возможность реструктуризации. Начисляется пеня согласно договору. Обращение взыскания на предмет залога происходит только по решению суда и является крайней мерой.</div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="tFaq(this)">Можно ли оформить дистанционно?<span class="faq-arr"><svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l4 4 4-4"/></svg></span></div>
+          <div class="faq-a"><div class="faq-a-in">Частично. Подача заявки, предварительное одобрение и оценка — дистанционно. Подписание договора и регистрация в Росреестре требуют личного присутствия (или электронной подписи при наличии).</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════
+     ФИНАЛЬНАЯ ФОРМА
+════════════════════════════════════ -->
+<section class="final" id="final">
+  <div class="W">
+    <div class="final-inner">
+      <div class="fa fa-l">
+        <h2>Получите деньги<br>под залог<br><span>уже завтра</span></h2>
+        <p>Менеджер перезвонит в течение 5 минут. Рассчитаем условия персонально под вашу ситуацию.</p>
+        <ul class="final-list">
+          <li>Без справок о доходах</li>
+          <li>Кредитная история не проверяется</li>
+          <li>Деньги за 1 рабочий день</li>
+          <li>Вы остаётесь собственником</li>
+          <li>Прозрачный договор по 102-ФЗ</li>
+        </ul>
+        <div class="final-counter">
+          <div>
+            <div class="final-counter-n" id="fcn">27</div>
+          </div>
+          <div class="final-counter-l">заявок получено<br>сегодня</div>
+        </div>
+      </div>
+      <div class="fa fa-r">
+        <div class="final-form">
+          <div class="ff-title">Оставить заявку</div>
+          <div class="ff-sub">Перезвоним в течение 5 минут и подберём условия</div>
+          <div id="ffBody">
+            <input type="text" class="fi" placeholder="Ваше имя" id="ff-name">
+            <div class="fi-phone">
+              <span class="fi-flag">🇷🇺 ▾</span>
+              <input type="tel" placeholder="+7 (000) 000-00-00" id="ff-phone">
+            </div>
+            <input type="text" class="fi" placeholder="Стоимость недвижимости (примерно)" id="ff-prop">
+            <div class="fcheck">
+              <input type="checkbox" id="ff-agree">
+              <label for="ff-agree">Даю <a href="#docs">согласие на обработку персональных данных</a></label>
+            </div>
+            <button class="btn-gold" style="width:100%;justify-content:center;font-size:15px;padding:16px"
+                    onclick="sub('ff-name','ff-phone','ff-agree','ffBody','ffOk')">
+              Получить консультацию бесплатно
+            </button>
+          </div>
+          <div class="ff-ok" id="ffOk">
+            <div class="ok">✅</div>
+            <h3>Заявка принята!</h3>
+            <p>Перезвоним в течение 5 минут.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════
+     FOOTER
+════════════════════════════════════ -->
+<footer id="docs">
+  <div class="W">
+    <div class="foot-grid">
+      <div>
+        <!-- ⬇ ЛОГОТИП В ФУТЕРЕ -->
+        <div class="logo" style="margin-bottom:16px;cursor:default">
+          <div class="logo-mark" style="background:rgba(255,255,255,.1);color:rgba(198,169,107,.7)">F</div>
+          <span style="color:rgba(255,255,255,.5);font-size:16px">[НАЗВАНИЕ]</span>
+        </div>
+        <!-- ⬆ -->
+        <!-- ⬇ РЕКВИЗИТЫ — заполните -->
+        <div class="foot-req">
+          <p>
+            [Название организации]<br>
+            ИНН: [заполнить]<br>
+            ОГРН / ОГРНИП: [заполнить]<br>
+            <br>
+            Деятельность осуществляется в соответствии<br>
+            с Федеральным законом № 102-ФЗ об ипотеке.
+          </p>
+        </div>
+        <!-- ⬆ -->
+      </div>
+      <div class="foot-links">
+        <a href="#">Политика конфиденциальности</a>
+        <a href="#">Согласие на обработку персональных данных</a>
+        <a href="#">Агентский договор «Займ»</a>
+        <a href="#">Договор залога недвижимости</a>
+        <a href="#">Тарифы и условия</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <!-- ⬇ КОПИРАЙТ — замените -->
+      <p class="foot-copy">© 2025 [Название]. Все права защищены. Не является публичной офертой.</p>
+      <!-- ⬆ -->
+      <div class="fsoc">
+        <a href="https://t.me/" title="Telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.247-2.01 9.471c-.148.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.48 14.765l-2.946-.92c-.64-.203-.653-.64.136-.947l11.514-4.44c.533-.194 1.001.13.378.789z"/></svg></a>
+        <a href="https://wa.me/" title="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.556 4.122 1.528 5.859L0 24l6.335-1.652A11.944 11.944 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.793 9.793 0 0 1-5.013-1.377l-.36-.214-3.76.98 1.01-3.668-.234-.374A9.794 9.794 0 0 1 2.182 12C2.182 6.698 6.698 2.182 12 2.182S21.818 6.698 21.818 12 17.302 21.818 12 21.818z"/></svg></a>
+        <a href="mailto:" title="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg></a>
+        <a href="tel:" title="Телефон"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 3.85 10.5 19.79 19.79 0 0 1 .78 1.82 2 2 0 0 1 2.76 0h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.09 7.56a16 16 0 0 0 6.29 6.29l.95-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- POPUP -->
+<div class="pov" id="pov" onclick="cpBg(event)">
+  <div class="pop">
+    <button class="pop-x" onclick="closePop()">✕</button>
+    <div id="popBody">
+      <div class="pop-tag">Бесплатная консультация</div>
+      <h3>Получить условия займа</h3>
+      <p class="sub">Менеджер перезвонит в течение 5 минут и рассчитает условия персонально для вас.</p>
+      <input type="text" class="fi" placeholder="Ваше имя" id="p-name">
+      <div class="fi-phone">
+        <span class="fi-flag">🇷🇺 ▾</span>
+        <input type="tel" placeholder="+7 (000) 000-00-00" id="p-phone">
+      </div>
+      <input type="text" class="fi" placeholder="Город" id="p-city" style="margin-bottom:12px">
+      <div class="fcheck">
+        <input type="checkbox" id="p-agree">
+        <label for="p-agree">Даю <a href="#docs" onclick="closePop()">согласие на обработку персональных данных</a></label>
+      </div>
+      <button class="btn-gold" style="width:100%;justify-content:center;font-size:15px"
+              onclick="sub('p-name','p-phone','p-agree','popBody','popOk')">
+        Получить расчёт →
+      </button>
+    </div>
+    <div class="ff-ok" id="popOk" style="padding:32px 0">
+      <div class="ok">✅</div>
+      <h3>Заявка принята!</h3>
+      <p>Перезвоним в течение 5 минут.</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- Фиксированная кнопка -->
+<button class="fixed-btn" onclick="openPop()">Получить расчёт</button>
+
+<!-- Mobile sticky -->
+<div class="mob-cta">
+  <button onclick="openPop()">Оставить заявку · Бесплатно</button>
+</div>
+
+
+<script>
+/* ═══ BURGER ═══ */
+const brg = document.getElementById('brg');
+const mn  = document.getElementById('mn');
+brg.addEventListener('click', () => { brg.classList.toggle('on'); mn.classList.toggle('on') });
+function cn() { brg.classList.remove('on'); mn.classList.remove('on') }
+
+/* ═══ HEADER SCROLL ═══ */
+window.addEventListener('scroll', () => {
+  document.getElementById('mainHdr').classList.toggle('scrolled', scrollY > 10);
+}, { passive: true });
+
+/* ═══ SCROLL REVEAL ═══ */
+const ro = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); ro.unobserve(e.target) } });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.fa,.fa-l,.fa-r').forEach(el => ro.observe(el));
+
+/* ═══ COUNTER ANIMATION ═══ */
+const co = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    const el = e.target, to = +el.dataset.to;
+    const s = Date.now(), d = 1600;
+    (function f() {
+      const p = Math.min((Date.now() - s) / d, 1);
+      const ep = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(to * ep);
+      if (p < 1) requestAnimationFrame(f);
+    })();
+    co.unobserve(el);
+  });
+}, { threshold: 0.7 });
+document.querySelectorAll('.cu').forEach(el => co.observe(el));
+
+/* ═══ ЖИВОЙ СЧЁТЧИК ЗАЯВОК ═══ */
+let appCount = 27;
+setInterval(() => {
+  if (Math.random() < 0.3) {
+    appCount++;
+    const n = document.getElementById('appCounterN');
+    const fc = document.getElementById('fcn');
+    if (n) n.textContent = appCount;
+    if (fc) fc.textContent = appCount;
+  }
+}, 8000);
+
+/* ═══ КАЛЬКУЛЯТОР ═══ */
+function calcUpdate() {
+  const val  = +document.getElementById('calcValue').value || 5000000;
+  const term = +document.getElementById('calcTerm').value  || 12;
+  const rangeEl = document.getElementById('calcRange');
+  if (rangeEl) rangeEl.value = val;
+
+  const maxLoan  = Math.round(val * 0.7);
+  const rate     = 0.24;
+  const monthly  = Math.round(maxLoan * (rate / 12) * Math.pow(1 + rate / 12, term) / (Math.pow(1 + rate / 12, term) - 1));
+
+  const fmt = n => n.toLocaleString('ru-RU') + ' ₽';
+
+  document.getElementById('rSum').textContent     = fmt(maxLoan);
+  document.getElementById('rRate').textContent    = `от 24% (${(maxLoan * rate).toLocaleString('ru-RU')} ₽/год)`;
+  document.getElementById('rMonthly').textContent = fmt(monthly);
+}
+calcUpdate();
+
+function calcSubmit() {
+  const phone = document.getElementById('calc-phone')?.value.trim();
+  const agree = document.getElementById('calc-agree')?.checked;
+  if (!phone) { alert('Введите телефон для получения расчёта.'); return }
+  if (!agree) { alert('Дайте согласие на обработку данных.'); return }
+  document.getElementById('calcBody').style.display = 'none';
+  document.getElementById('calcOk').style.display   = 'block';
+}
+
+/* ═══ FAQ ═══ */
+function tFaq(el) {
+  const item = el.parentElement, was = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!was) item.classList.add('open');
+}
+
+/* ═══ POPUP ═══ */
+function openPop() {
+  ['p-name','p-phone','p-city'].forEach(id => { const e = document.getElementById(id); if (e) e.value = '' });
+  const ag = document.getElementById('p-agree'); if (ag) ag.checked = false;
+  document.getElementById('popBody').style.display = '';
+  document.getElementById('popOk').style.display   = 'none';
+  document.getElementById('pov').classList.add('on');
+  document.body.style.overflow = 'hidden';
+}
+function closePop() {
+  document.getElementById('pov').classList.remove('on');
+  document.body.style.overflow = '';
+}
+function cpBg(e) { if (e.target === document.getElementById('pov')) closePop() }
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closePop() });
+
+/* ═══ UNIVERSAL FORM SUBMIT ═══ */
+function sub(nId, pId, aId, bodyId, okId) {
+  const n = document.getElementById(nId)?.value.trim();
+  const p = document.getElementById(pId)?.value.trim();
+  const a = document.getElementById(aId)?.checked;
+  if (!n || !p) { alert('Заполните имя и телефон.'); return }
+  if (!a) { alert('Дайте согласие на обработку персональных данных.'); return }
+  document.getElementById(bodyId).style.display = 'none';
+  document.getElementById(okId).style.display   = 'block';
+}
+
+/* ═══ PHONE MASK ═══ */
+['ff-phone','p-phone','calc-phone'].forEach(id => {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.addEventListener('input', function () {
+    let v = this.value.replace(/\D/g, '');
+    if (v.startsWith('8')) v = '7' + v.slice(1);
+    if (!v.startsWith('7') && v.length) v = '7' + v;
+    v = v.slice(0, 11);
+    let f = '+7';
+    if (v.length > 1) f += ' (' + v.slice(1, 4);
+    if (v.length > 4) f += ') ' + v.slice(4, 7);
+    if (v.length > 7) f += '-' + v.slice(7, 9);
+    if (v.length > 9) f += '-' + v.slice(9, 11);
+    this.value = f;
+  });
+});
+
+/* ═══ SYNC RANGE → INPUT ═══ */
+const calcV = document.getElementById('calcValue');
+const calcR = document.getElementById('calcRange');
+if (calcV && calcR) {
+  calcV.addEventListener('input', () => { calcR.value = calcV.value; calcUpdate() });
+}
+</script>
+</body>
+</html>
